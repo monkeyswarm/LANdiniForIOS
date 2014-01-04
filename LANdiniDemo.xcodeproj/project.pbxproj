@@ -1,0 +1,575 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9099982D1860A4AA0085D121 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9099982C1860A4AA0085D121 /* Foundation.framework */; };
+		9099982F1860A4AA0085D121 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9099982E1860A4AA0085D121 /* CoreGraphics.framework */; };
+		909998311860A4AA0085D121 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 909998301860A4AA0085D121 /* UIKit.framework */; };
+		909998371860A4AA0085D121 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 909998351860A4AA0085D121 /* InfoPlist.strings */; };
+		909998391860A4AA0085D121 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 909998381860A4AA0085D121 /* main.m */; };
+		9099983D1860A4AA0085D121 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9099983C1860A4AA0085D121 /* AppDelegate.m */; };
+		909998401860A4AA0085D121 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9099983E1860A4AA0085D121 /* Main_iPhone.storyboard */; };
+		909998431860A4AA0085D121 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 909998411860A4AA0085D121 /* Main_iPad.storyboard */; };
+		909998461860A4AA0085D121 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 909998451860A4AA0085D121 /* ViewController.m */; };
+		909998481860A4AA0085D121 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 909998471860A4AA0085D121 /* Images.xcassets */; };
+		909998EC1860A6950085D121 /* MutLockArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 909998BE1860A6950085D121 /* MutLockArray.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		909998EE1860A6950085D121 /* MutLockDict.m in Sources */ = {isa = PBXBuildFile; fileRef = 909998C01860A6950085D121 /* MutLockDict.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		909998F01860A6950085D121 /* MutNRLockArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 909998C21860A6950085D121 /* MutNRLockArray.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		909998F21860A6950085D121 /* MutNRLockDict.m in Sources */ = {isa = PBXBuildFile; fileRef = 909998C41860A6950085D121 /* MutNRLockDict.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		909998F61860A6950085D121 /* ObjectHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 909998C81860A6950085D121 /* ObjectHolder.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		909998F81860A6950085D121 /* VVStopwatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 909998CB1860A6950085D121 /* VVStopwatch.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		909998FA1860A6950085D121 /* VVThreadLoop.m in Sources */ = {isa = PBXBuildFile; fileRef = 909998CD1860A6950085D121 /* VVThreadLoop.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		909998FC1860A6950085D121 /* OSCAddressSpace.m in Sources */ = {isa = PBXBuildFile; fileRef = 909998D21860A6950085D121 /* OSCAddressSpace.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		909998FE1860A6950085D121 /* OSCBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = 909998D41860A6950085D121 /* OSCBundle.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		909999001860A6950085D121 /* OSCInPort.m in Sources */ = {isa = PBXBuildFile; fileRef = 909998D71860A6950085D121 /* OSCInPort.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		909999021860A6950085D121 /* OSCManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 909998D91860A6950085D121 /* OSCManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		909999041860A6950085D121 /* OSCMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 909998DB1860A6950085D121 /* OSCMessage.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		909999061860A6950085D121 /* OSCNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 909998DD1860A6950085D121 /* OSCNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		909999081860A6950085D121 /* OSCOutPort.m in Sources */ = {isa = PBXBuildFile; fileRef = 909998DF1860A6950085D121 /* OSCOutPort.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9099990A1860A6950085D121 /* OSCPacket.m in Sources */ = {isa = PBXBuildFile; fileRef = 909998E11860A6950085D121 /* OSCPacket.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9099990C1860A6950085D121 /* OSCStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 909998E31860A6950085D121 /* OSCStringAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		909999101860A6950085D121 /* OSCValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 909998E61860A6950085D121 /* OSCValue.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		909999121860A6950085D121 /* OSCZeroConfDomain.m in Sources */ = {isa = PBXBuildFile; fileRef = 909998E81860A6950085D121 /* OSCZeroConfDomain.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		909999141860A6950085D121 /* OSCZeroConfManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 909998EA1860A6950085D121 /* OSCZeroConfManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9099991C1860B7360085D121 /* LANdiniUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9099991B1860B7360085D121 /* LANdiniUser.m */; };
+		909999201860BA330085D121 /* LANdiniLANManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9099991F1860BA330085D121 /* LANdiniLANManager.m */; };
+		DC9162A11863C20D00A329FD /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = DC91629B1863C20D00A329FD /* LICENSE */; };
+		DC9162A21863C20D00A329FD /* README.markdown in Resources */ = {isa = PBXBuildFile; fileRef = DC91629C1863C20D00A329FD /* README.markdown */; };
+		DC9162A31863C20D00A329FD /* MAZeroingWeakRef.m in Sources */ = {isa = PBXBuildFile; fileRef = DC91629F1863C20D00A329FD /* MAZeroingWeakRef.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DC9162A61863C24300A329FD /* VVAssertionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9162A51863C24300A329FD /* VVAssertionHandler.m */; };
+		DC9162A91863C2CD00A329FD /* OSCQueryReply.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9162A81863C2CD00A329FD /* OSCQueryReply.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		909998291860A4AA0085D121 /* LANdiniDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LANdiniDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9099982C1860A4AA0085D121 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9099982E1860A4AA0085D121 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		909998301860A4AA0085D121 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		909998341860A4AA0085D121 /* LANdiniDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LANdiniDemo-Info.plist"; sourceTree = "<group>"; };
+		909998361860A4AA0085D121 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		909998381860A4AA0085D121 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9099983A1860A4AA0085D121 /* LANdiniDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LANdiniDemo-Prefix.pch"; sourceTree = "<group>"; };
+		9099983B1860A4AA0085D121 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9099983C1860A4AA0085D121 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9099983F1860A4AA0085D121 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		909998421860A4AA0085D121 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		909998441860A4AA0085D121 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		909998451860A4AA0085D121 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		909998471860A4AA0085D121 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		9099984E1860A4AA0085D121 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		909998BD1860A6950085D121 /* MutLockArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MutLockArray.h; sourceTree = "<group>"; };
+		909998BE1860A6950085D121 /* MutLockArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MutLockArray.m; sourceTree = "<group>"; };
+		909998BF1860A6950085D121 /* MutLockDict.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MutLockDict.h; sourceTree = "<group>"; };
+		909998C01860A6950085D121 /* MutLockDict.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MutLockDict.m; sourceTree = "<group>"; };
+		909998C11860A6950085D121 /* MutNRLockArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MutNRLockArray.h; sourceTree = "<group>"; };
+		909998C21860A6950085D121 /* MutNRLockArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MutNRLockArray.m; sourceTree = "<group>"; };
+		909998C31860A6950085D121 /* MutNRLockDict.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MutNRLockDict.h; sourceTree = "<group>"; };
+		909998C41860A6950085D121 /* MutNRLockDict.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MutNRLockDict.m; sourceTree = "<group>"; };
+		909998C71860A6950085D121 /* ObjectHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectHolder.h; sourceTree = "<group>"; };
+		909998C81860A6950085D121 /* ObjectHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectHolder.m; sourceTree = "<group>"; };
+		909998C91860A6950085D121 /* VVBasicMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVBasicMacros.h; sourceTree = "<group>"; };
+		909998CA1860A6950085D121 /* VVStopwatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVStopwatch.h; sourceTree = "<group>"; };
+		909998CB1860A6950085D121 /* VVStopwatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVStopwatch.m; sourceTree = "<group>"; };
+		909998CC1860A6950085D121 /* VVThreadLoop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVThreadLoop.h; sourceTree = "<group>"; };
+		909998CD1860A6950085D121 /* VVThreadLoop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVThreadLoop.m; sourceTree = "<group>"; };
+		909998CE1860A6950085D121 /* VVBasics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVBasics.h; sourceTree = "<group>"; };
+		909998D11860A6950085D121 /* OSCAddressSpace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCAddressSpace.h; sourceTree = "<group>"; };
+		909998D21860A6950085D121 /* OSCAddressSpace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSCAddressSpace.m; sourceTree = "<group>"; };
+		909998D31860A6950085D121 /* OSCBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCBundle.h; sourceTree = "<group>"; };
+		909998D41860A6950085D121 /* OSCBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSCBundle.m; sourceTree = "<group>"; };
+		909998D51860A6950085D121 /* OSCConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCConstants.h; sourceTree = "<group>"; };
+		909998D61860A6950085D121 /* OSCInPort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCInPort.h; sourceTree = "<group>"; };
+		909998D71860A6950085D121 /* OSCInPort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSCInPort.m; sourceTree = "<group>"; };
+		909998D81860A6950085D121 /* OSCManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCManager.h; sourceTree = "<group>"; };
+		909998D91860A6950085D121 /* OSCManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSCManager.m; sourceTree = "<group>"; };
+		909998DA1860A6950085D121 /* OSCMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCMessage.h; sourceTree = "<group>"; };
+		909998DB1860A6950085D121 /* OSCMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSCMessage.m; sourceTree = "<group>"; };
+		909998DC1860A6950085D121 /* OSCNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCNode.h; sourceTree = "<group>"; };
+		909998DD1860A6950085D121 /* OSCNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSCNode.m; sourceTree = "<group>"; };
+		909998DE1860A6950085D121 /* OSCOutPort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCOutPort.h; sourceTree = "<group>"; };
+		909998DF1860A6950085D121 /* OSCOutPort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSCOutPort.m; sourceTree = "<group>"; };
+		909998E01860A6950085D121 /* OSCPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCPacket.h; sourceTree = "<group>"; };
+		909998E11860A6950085D121 /* OSCPacket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSCPacket.m; sourceTree = "<group>"; };
+		909998E21860A6950085D121 /* OSCStringAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCStringAdditions.h; sourceTree = "<group>"; };
+		909998E31860A6950085D121 /* OSCStringAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSCStringAdditions.m; sourceTree = "<group>"; };
+		909998E51860A6950085D121 /* OSCValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCValue.h; sourceTree = "<group>"; };
+		909998E61860A6950085D121 /* OSCValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSCValue.m; sourceTree = "<group>"; };
+		909998E71860A6950085D121 /* OSCZeroConfDomain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCZeroConfDomain.h; sourceTree = "<group>"; };
+		909998E81860A6950085D121 /* OSCZeroConfDomain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSCZeroConfDomain.m; sourceTree = "<group>"; };
+		909998E91860A6950085D121 /* OSCZeroConfManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCZeroConfManager.h; sourceTree = "<group>"; };
+		909998EA1860A6950085D121 /* OSCZeroConfManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSCZeroConfManager.m; sourceTree = "<group>"; };
+		909998EB1860A6950085D121 /* VVOSC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVOSC.h; sourceTree = "<group>"; };
+		9099991A1860B7360085D121 /* LANdiniUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LANdiniUser.h; sourceTree = "<group>"; };
+		9099991B1860B7360085D121 /* LANdiniUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LANdiniUser.m; sourceTree = "<group>"; };
+		9099991E1860BA330085D121 /* LANdiniLANManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LANdiniLANManager.h; sourceTree = "<group>"; };
+		9099991F1860BA330085D121 /* LANdiniLANManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LANdiniLANManager.m; sourceTree = "<group>"; };
+		DC9162951863BF8900A329FD /* VVBasicsStatic-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "VVBasicsStatic-Prefix.pch"; sourceTree = "<group>"; };
+		DC9162961863BF8900A329FD /* VVBasicsStatic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVBasicsStatic.h; sourceTree = "<group>"; };
+		DC9162981863BF8900A329FD /* VVOSCStatic-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "VVOSCStatic-Prefix.pch"; sourceTree = "<group>"; };
+		DC9162991863BF8900A329FD /* VVOSCStatic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVOSCStatic.h; sourceTree = "<group>"; };
+		DC91629B1863C20D00A329FD /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		DC91629C1863C20D00A329FD /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
+		DC91629E1863C20D00A329FD /* MAZeroingWeakRef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAZeroingWeakRef.h; sourceTree = "<group>"; };
+		DC91629F1863C20D00A329FD /* MAZeroingWeakRef.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAZeroingWeakRef.m; sourceTree = "<group>"; };
+		DC9162A01863C20D00A329FD /* MAZeroingWeakRefNativeZWRNotAllowedTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAZeroingWeakRefNativeZWRNotAllowedTable.h; sourceTree = "<group>"; };
+		DC9162A41863C24300A329FD /* VVAssertionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVAssertionHandler.h; sourceTree = "<group>"; };
+		DC9162A51863C24300A329FD /* VVAssertionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVAssertionHandler.m; sourceTree = "<group>"; };
+		DC9162A71863C2CD00A329FD /* OSCQueryReply.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCQueryReply.h; sourceTree = "<group>"; };
+		DC9162A81863C2CD00A329FD /* OSCQueryReply.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSCQueryReply.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		909998261860A4AA0085D121 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9099982F1860A4AA0085D121 /* CoreGraphics.framework in Frameworks */,
+				909998311860A4AA0085D121 /* UIKit.framework in Frameworks */,
+				9099982D1860A4AA0085D121 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		909998201860A4AA0085D121 = {
+			isa = PBXGroup;
+			children = (
+				DC91629A1863C20D00A329FD /* MAZeroingWeakRef */,
+				DC9162941863BF8900A329FD /* VVBasicsStatic */,
+				DC9162971863BF8900A329FD /* VVOSCStatic */,
+				909998BB1860A6950085D121 /* VVBasics */,
+				909998CF1860A6950085D121 /* VVOSC */,
+				909998321860A4AA0085D121 /* LANdiniDemo */,
+				9099982B1860A4AA0085D121 /* Frameworks */,
+				9099982A1860A4AA0085D121 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9099982A1860A4AA0085D121 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				909998291860A4AA0085D121 /* LANdiniDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9099982B1860A4AA0085D121 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9099982C1860A4AA0085D121 /* Foundation.framework */,
+				9099982E1860A4AA0085D121 /* CoreGraphics.framework */,
+				909998301860A4AA0085D121 /* UIKit.framework */,
+				9099984E1860A4AA0085D121 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		909998321860A4AA0085D121 /* LANdiniDemo */ = {
+			isa = PBXGroup;
+			children = (
+				9099983B1860A4AA0085D121 /* AppDelegate.h */,
+				9099983C1860A4AA0085D121 /* AppDelegate.m */,
+				9099983E1860A4AA0085D121 /* Main_iPhone.storyboard */,
+				909998411860A4AA0085D121 /* Main_iPad.storyboard */,
+				909998441860A4AA0085D121 /* ViewController.h */,
+				909998451860A4AA0085D121 /* ViewController.m */,
+				909998471860A4AA0085D121 /* Images.xcassets */,
+				909998331860A4AA0085D121 /* Supporting Files */,
+				9099991A1860B7360085D121 /* LANdiniUser.h */,
+				9099991B1860B7360085D121 /* LANdiniUser.m */,
+				9099991E1860BA330085D121 /* LANdiniLANManager.h */,
+				9099991F1860BA330085D121 /* LANdiniLANManager.m */,
+			);
+			path = LANdiniDemo;
+			sourceTree = "<group>";
+		};
+		909998331860A4AA0085D121 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				909998341860A4AA0085D121 /* LANdiniDemo-Info.plist */,
+				909998351860A4AA0085D121 /* InfoPlist.strings */,
+				909998381860A4AA0085D121 /* main.m */,
+				9099983A1860A4AA0085D121 /* LANdiniDemo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		909998BB1860A6950085D121 /* VVBasics */ = {
+			isa = PBXGroup;
+			children = (
+				909998BC1860A6950085D121 /* src */,
+				909998CE1860A6950085D121 /* VVBasics.h */,
+			);
+			path = VVBasics;
+			sourceTree = "<group>";
+		};
+		909998BC1860A6950085D121 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				DC9162A41863C24300A329FD /* VVAssertionHandler.h */,
+				DC9162A51863C24300A329FD /* VVAssertionHandler.m */,
+				909998BD1860A6950085D121 /* MutLockArray.h */,
+				909998BE1860A6950085D121 /* MutLockArray.m */,
+				909998BF1860A6950085D121 /* MutLockDict.h */,
+				909998C01860A6950085D121 /* MutLockDict.m */,
+				909998C11860A6950085D121 /* MutNRLockArray.h */,
+				909998C21860A6950085D121 /* MutNRLockArray.m */,
+				909998C31860A6950085D121 /* MutNRLockDict.h */,
+				909998C41860A6950085D121 /* MutNRLockDict.m */,
+				909998C71860A6950085D121 /* ObjectHolder.h */,
+				909998C81860A6950085D121 /* ObjectHolder.m */,
+				909998C91860A6950085D121 /* VVBasicMacros.h */,
+				909998CA1860A6950085D121 /* VVStopwatch.h */,
+				909998CB1860A6950085D121 /* VVStopwatch.m */,
+				909998CC1860A6950085D121 /* VVThreadLoop.h */,
+				909998CD1860A6950085D121 /* VVThreadLoop.m */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		909998CF1860A6950085D121 /* VVOSC */ = {
+			isa = PBXGroup;
+			children = (
+				909998D01860A6950085D121 /* FrameworkSrc */,
+				909998EB1860A6950085D121 /* VVOSC.h */,
+			);
+			path = VVOSC;
+			sourceTree = "<group>";
+		};
+		909998D01860A6950085D121 /* FrameworkSrc */ = {
+			isa = PBXGroup;
+			children = (
+				DC9162A71863C2CD00A329FD /* OSCQueryReply.h */,
+				DC9162A81863C2CD00A329FD /* OSCQueryReply.m */,
+				909998D11860A6950085D121 /* OSCAddressSpace.h */,
+				909998D21860A6950085D121 /* OSCAddressSpace.m */,
+				909998D31860A6950085D121 /* OSCBundle.h */,
+				909998D41860A6950085D121 /* OSCBundle.m */,
+				909998D51860A6950085D121 /* OSCConstants.h */,
+				909998D61860A6950085D121 /* OSCInPort.h */,
+				909998D71860A6950085D121 /* OSCInPort.m */,
+				909998D81860A6950085D121 /* OSCManager.h */,
+				909998D91860A6950085D121 /* OSCManager.m */,
+				909998DA1860A6950085D121 /* OSCMessage.h */,
+				909998DB1860A6950085D121 /* OSCMessage.m */,
+				909998DC1860A6950085D121 /* OSCNode.h */,
+				909998DD1860A6950085D121 /* OSCNode.m */,
+				909998DE1860A6950085D121 /* OSCOutPort.h */,
+				909998DF1860A6950085D121 /* OSCOutPort.m */,
+				909998E01860A6950085D121 /* OSCPacket.h */,
+				909998E11860A6950085D121 /* OSCPacket.m */,
+				909998E21860A6950085D121 /* OSCStringAdditions.h */,
+				909998E31860A6950085D121 /* OSCStringAdditions.m */,
+				909998E51860A6950085D121 /* OSCValue.h */,
+				909998E61860A6950085D121 /* OSCValue.m */,
+				909998E71860A6950085D121 /* OSCZeroConfDomain.h */,
+				909998E81860A6950085D121 /* OSCZeroConfDomain.m */,
+				909998E91860A6950085D121 /* OSCZeroConfManager.h */,
+				909998EA1860A6950085D121 /* OSCZeroConfManager.m */,
+			);
+			path = FrameworkSrc;
+			sourceTree = "<group>";
+		};
+		DC9162941863BF8900A329FD /* VVBasicsStatic */ = {
+			isa = PBXGroup;
+			children = (
+				DC9162951863BF8900A329FD /* VVBasicsStatic-Prefix.pch */,
+				DC9162961863BF8900A329FD /* VVBasicsStatic.h */,
+			);
+			path = VVBasicsStatic;
+			sourceTree = "<group>";
+		};
+		DC9162971863BF8900A329FD /* VVOSCStatic */ = {
+			isa = PBXGroup;
+			children = (
+				DC9162981863BF8900A329FD /* VVOSCStatic-Prefix.pch */,
+				DC9162991863BF8900A329FD /* VVOSCStatic.h */,
+			);
+			path = VVOSCStatic;
+			sourceTree = "<group>";
+		};
+		DC91629A1863C20D00A329FD /* MAZeroingWeakRef */ = {
+			isa = PBXGroup;
+			children = (
+				DC91629B1863C20D00A329FD /* LICENSE */,
+				DC91629C1863C20D00A329FD /* README.markdown */,
+				DC91629D1863C20D00A329FD /* Source */,
+			);
+			path = MAZeroingWeakRef;
+			sourceTree = "<group>";
+		};
+		DC91629D1863C20D00A329FD /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				DC91629E1863C20D00A329FD /* MAZeroingWeakRef.h */,
+				DC91629F1863C20D00A329FD /* MAZeroingWeakRef.m */,
+				DC9162A01863C20D00A329FD /* MAZeroingWeakRefNativeZWRNotAllowedTable.h */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		909998281860A4AA0085D121 /* LANdiniDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9099985E1860A4AA0085D121 /* Build configuration list for PBXNativeTarget "LANdiniDemo" */;
+			buildPhases = (
+				909998251860A4AA0085D121 /* Sources */,
+				909998261860A4AA0085D121 /* Frameworks */,
+				909998271860A4AA0085D121 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LANdiniDemo;
+			productName = LANdiniDemo;
+			productReference = 909998291860A4AA0085D121 /* LANdiniDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		909998211860A4AA0085D121 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = IglesiaIntermedia;
+			};
+			buildConfigurationList = 909998241860A4AA0085D121 /* Build configuration list for PBXProject "LANdiniDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 909998201860A4AA0085D121;
+			productRefGroup = 9099982A1860A4AA0085D121 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				909998281860A4AA0085D121 /* LANdiniDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		909998271860A4AA0085D121 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC9162A11863C20D00A329FD /* LICENSE in Resources */,
+				909998431860A4AA0085D121 /* Main_iPad.storyboard in Resources */,
+				909998481860A4AA0085D121 /* Images.xcassets in Resources */,
+				DC9162A21863C20D00A329FD /* README.markdown in Resources */,
+				909998401860A4AA0085D121 /* Main_iPhone.storyboard in Resources */,
+				909998371860A4AA0085D121 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		909998251860A4AA0085D121 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				909998F21860A6950085D121 /* MutNRLockDict.m in Sources */,
+				909999041860A6950085D121 /* OSCMessage.m in Sources */,
+				9099990C1860A6950085D121 /* OSCStringAdditions.m in Sources */,
+				909999201860BA330085D121 /* LANdiniLANManager.m in Sources */,
+				909999141860A6950085D121 /* OSCZeroConfManager.m in Sources */,
+				DC9162A91863C2CD00A329FD /* OSCQueryReply.m in Sources */,
+				DC9162A31863C20D00A329FD /* MAZeroingWeakRef.m in Sources */,
+				909998461860A4AA0085D121 /* ViewController.m in Sources */,
+				909998EE1860A6950085D121 /* MutLockDict.m in Sources */,
+				9099991C1860B7360085D121 /* LANdiniUser.m in Sources */,
+				9099983D1860A4AA0085D121 /* AppDelegate.m in Sources */,
+				909999101860A6950085D121 /* OSCValue.m in Sources */,
+				909998391860A4AA0085D121 /* main.m in Sources */,
+				909998F61860A6950085D121 /* ObjectHolder.m in Sources */,
+				909998FC1860A6950085D121 /* OSCAddressSpace.m in Sources */,
+				909999061860A6950085D121 /* OSCNode.m in Sources */,
+				909998EC1860A6950085D121 /* MutLockArray.m in Sources */,
+				909998FE1860A6950085D121 /* OSCBundle.m in Sources */,
+				9099990A1860A6950085D121 /* OSCPacket.m in Sources */,
+				909998F01860A6950085D121 /* MutNRLockArray.m in Sources */,
+				909999001860A6950085D121 /* OSCInPort.m in Sources */,
+				909999121860A6950085D121 /* OSCZeroConfDomain.m in Sources */,
+				909998F81860A6950085D121 /* VVStopwatch.m in Sources */,
+				909999081860A6950085D121 /* OSCOutPort.m in Sources */,
+				909998FA1860A6950085D121 /* VVThreadLoop.m in Sources */,
+				DC9162A61863C24300A329FD /* VVAssertionHandler.m in Sources */,
+				909999021860A6950085D121 /* OSCManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		909998351860A4AA0085D121 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				909998361860A4AA0085D121 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		9099983E1860A4AA0085D121 /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9099983F1860A4AA0085D121 /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		909998411860A4AA0085D121 /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				909998421860A4AA0085D121 /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9099985C1860A4AA0085D121 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: daniel Iglesia (6Y3ENEJPL8)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "41ED0D83-9704-434F-94ED-F1A4BC7BB786";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9099985D1860A4AA0085D121 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: daniel Iglesia (6Y3ENEJPL8)";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PROVISIONING_PROFILE = "41ED0D83-9704-434F-94ED-F1A4BC7BB786";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9099985F1860A4AA0085D121 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: daniel Iglesia (6Y3ENEJPL8)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LANdiniDemo/LANdiniDemo-Prefix.pch";
+				INFOPLIST_FILE = "LANdiniDemo/LANdiniDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "41ED0D83-9704-434F-94ED-F1A4BC7BB786";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		909998601860A4AA0085D121 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: daniel Iglesia (6Y3ENEJPL8)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LANdiniDemo/LANdiniDemo-Prefix.pch";
+				INFOPLIST_FILE = "LANdiniDemo/LANdiniDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "41ED0D83-9704-434F-94ED-F1A4BC7BB786";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		909998241860A4AA0085D121 /* Build configuration list for PBXProject "LANdiniDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9099985C1860A4AA0085D121 /* Debug */,
+				9099985D1860A4AA0085D121 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9099985E1860A4AA0085D121 /* Build configuration list for PBXNativeTarget "LANdiniDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9099985F1860A4AA0085D121 /* Debug */,
+				909998601860A4AA0085D121 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 909998211860A4AA0085D121 /* Project object */;
+}
