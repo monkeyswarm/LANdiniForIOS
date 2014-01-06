@@ -108,10 +108,6 @@
 		9099991B1860B7360085D121 /* LANdiniUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LANdiniUser.m; sourceTree = "<group>"; };
 		9099991E1860BA330085D121 /* LANdiniLANManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LANdiniLANManager.h; sourceTree = "<group>"; };
 		9099991F1860BA330085D121 /* LANdiniLANManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LANdiniLANManager.m; sourceTree = "<group>"; };
-		DC9162951863BF8900A329FD /* VVBasicsStatic-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "VVBasicsStatic-Prefix.pch"; sourceTree = "<group>"; };
-		DC9162961863BF8900A329FD /* VVBasicsStatic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVBasicsStatic.h; sourceTree = "<group>"; };
-		DC9162981863BF8900A329FD /* VVOSCStatic-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "VVOSCStatic-Prefix.pch"; sourceTree = "<group>"; };
-		DC9162991863BF8900A329FD /* VVOSCStatic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVOSCStatic.h; sourceTree = "<group>"; };
 		DC91629B1863C20D00A329FD /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		DC91629C1863C20D00A329FD /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
 		DC91629E1863C20D00A329FD /* MAZeroingWeakRef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAZeroingWeakRef.h; sourceTree = "<group>"; };
@@ -141,8 +137,6 @@
 			isa = PBXGroup;
 			children = (
 				DC91629A1863C20D00A329FD /* MAZeroingWeakRef */,
-				DC9162941863BF8900A329FD /* VVBasicsStatic */,
-				DC9162971863BF8900A329FD /* VVOSCStatic */,
 				909998BB1860A6950085D121 /* VVBasics */,
 				909998CF1860A6950085D121 /* VVOSC */,
 				909998321860A4AA0085D121 /* LANdiniDemo */,
@@ -274,24 +268,6 @@
 				909998EA1860A6950085D121 /* OSCZeroConfManager.m */,
 			);
 			path = FrameworkSrc;
-			sourceTree = "<group>";
-		};
-		DC9162941863BF8900A329FD /* VVBasicsStatic */ = {
-			isa = PBXGroup;
-			children = (
-				DC9162951863BF8900A329FD /* VVBasicsStatic-Prefix.pch */,
-				DC9162961863BF8900A329FD /* VVBasicsStatic.h */,
-			);
-			path = VVBasicsStatic;
-			sourceTree = "<group>";
-		};
-		DC9162971863BF8900A329FD /* VVOSCStatic */ = {
-			isa = PBXGroup;
-			children = (
-				DC9162981863BF8900A329FD /* VVOSCStatic-Prefix.pch */,
-				DC9162991863BF8900A329FD /* VVOSCStatic.h */,
-			);
-			path = VVOSCStatic;
 			sourceTree = "<group>";
 		};
 		DC91629A1863C20D00A329FD /* MAZeroingWeakRef */ = {

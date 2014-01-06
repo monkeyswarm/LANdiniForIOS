@@ -14,6 +14,8 @@
 #import <arpa/inet.h>
 
 #define TEXT_LENGTH 2000
+#define TO_LOCAL_PORT 50506
+#define FROM_LOCAL_PORT 50505
 
 @interface ViewController () {
     LANdiniLANManager* llm;
@@ -41,26 +43,23 @@
 
     
     llm = [[LANdiniLANManager alloc]init];
+
     llm.logDelegate=self;
     
     manager = [[OSCManager alloc] init];
     [manager setDelegate:self];
-    int toLocalPort = 50506;
-    int fromLocalPort = 50505;
-    outPort = [manager createNewOutputToAddress:@"127.0.0.1" atPort:toLocalPort];
-    inPort = [manager createNewInputForPort:fromLocalPort];
-    
+    /*outPort = [manager createNewOutputToAddress:@"127.0.0.1" atPort:TO_LOCAL_PORT];
+    inPort = [manager createNewInputForPort:FROM_LOCAL_PORT];
+    */
+    [self restartOSC:nil];
     //not called on startup
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(restartOSC:) name:UIApplicationWillEnterForegroundNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(stopOSC:) name:UIApplicationWillResignActiveNotification object:nil];
 }
 
 -(void)restartOSC:(NSNotification*)notif{
-    int toLocalPort = 50506;
-    int fromLocalPort = 50505;
-    outPort = [manager createNewOutputToAddress:@"127.0.0.1" atPort:toLocalPort];
-    inPort = [manager createNewInputForPort:fromLocalPort];
-    [llm restartOSC];
+    outPort = [manager createNewOutputToAddress:@"127.0.0.1" atPort:TO_LOCAL_PORT];
+    inPort = [manager createNewInputForPort:FROM_LOCAL_PORT];
 }
 
 -(void)stopOSC:(NSNotification*)notif{
@@ -69,8 +68,6 @@
     [manager deleteAllInputs];
     inPort = nil;
     outPort = nil;
-
-    [llm stopOSC];
 }
 
 -(void)switchChange{

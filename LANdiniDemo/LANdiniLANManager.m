@@ -70,14 +70,7 @@
     return msg;
 }
 
-//-(void)sendMsgAddress:(NSString*)address vals:(NSArray*)vals{ //send to localapp  - vals
--(void)sendMsgToApp:(NSArray*)msgArray{
-    OSCMessage* msg = [LANdiniLANManager OSCMessageFromArray:msgArray];
-    [_targetAppAddr sendThisPacket:[OSCPacket createWithContent:msg]];
-    
-    if([self.logDelegate respondsToSelector:@selector(logMsgInput:)] )
-        [self.logDelegate logMsgInput:msgArray];
-}
+
 
 
 -(id)init{
@@ -102,14 +95,28 @@
         
         _oscManager = [[OSCManager alloc] init];
         [_oscManager setDelegate:self];
-        [self restartOSC];
+        
+        [self connectOSC:nil];
         
         [self checkForLAN];
+        
+        //not called on startup
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(connectOSC:) name:UIApplicationWillEnterForegroundNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(disconnectOSC:) name:UIApplicationWillResignActiveNotification object:nil];
     }
     return self;
 }
 
--(void)restartOSC{
+-(void)sendMsgToApp:(NSArray*)msgArray{
+    OSCMessage* msg = [LANdiniLANManager OSCMessageFromArray:msgArray];
+    [_targetAppAddr sendThisPacket:[OSCPacket createWithContent:msg]];
+    
+    if([self.logDelegate respondsToSelector:@selector(logMsgInput:)] )
+        [self.logDelegate logMsgInput:msgArray];
+}
+
+
+-(void)connectOSC:(NSNotification*)notif{
     _targetAppAddr = [_oscManager createNewOutputToAddress:@"127.0.0.1" atPort:_toLocalPort];
     _broadcastAppAddr = [_oscManager createNewOutputToAddress:@"224.0.0.1" atPort:SC_DEFAULT_PORT];
     _inPortNetwork = [_oscManager createNewInputForPort:SC_DEFAULT_PORT];//network responders from other landinis
@@ -120,7 +127,7 @@
     }
 }
 
--(void)stopOSC{
+-(void)disconnectOSC:(NSNotification*)notif{
     [_oscManager deleteAllInputs];
     [_oscManager deleteAllOutputs];
     _inPortNetwork = nil;//ness?
