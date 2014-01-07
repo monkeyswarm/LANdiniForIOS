@@ -83,7 +83,7 @@
 -(id)init{
     self = [super init];
     if(self){
-        _version = 0.16;
+        _version = 0.18;
         
         _lanCheckInterval = .5;
         _dropUserInterval = 2.0;
@@ -215,6 +215,9 @@
 -(void)receiveGetNamesRequest {
     //output message format:
     // '/landini/userNames, <list of user names>...
+    
+    //DEI edit - difference from super collider version:
+    //this returns a list of _all_ users (including me), not all but me
     
     NSMutableArray* msgArray = [[NSMutableArray alloc]init];
     [msgArray addObject:@"/landini/userNames"];
@@ -422,7 +425,8 @@
     //member port (NSNumber)
 
     //check types
-    if(![[msgArray objectAtIndex:0] isKindOfClass:[NSString class]] ||
+    if([msgArray count]!=4 ||
+       ![[msgArray objectAtIndex:0] isKindOfClass:[NSString class]] ||
        ![[msgArray objectAtIndex:1] isKindOfClass:[NSString class]] ||
        ![[msgArray objectAtIndex:2] isKindOfClass:[NSString class]] ||
        ![[msgArray objectAtIndex:3] isKindOfClass:[NSNumber class]]
@@ -504,7 +508,34 @@
     }
 }
 
-
+- (void) receivePingAndMsgIDs:(NSArray*)msgArray{
+    //input format:
+    //  landini address (NSString)
+    //  name (NSString)
+    //  xpos (NSNumber)
+    //  ypos (NSNumber)
+    //  lastGDID (NSNumber)
+    //  theirMinGD (NSNumber)
+    //  lastOGDID (NSNumber)
+    //  lastPerformedOGDID (NSNumber)
+    //  syncServerPingName (NSString)
+    
+    //if([msgArray count]!=9)return;
+    
+    NSString* name = (NSString*)[msgArray objectAtIndex:1];
+    //NSLog(@"receivePingAndMsg from %@", name);
+    LANdiniUser* usr = [self userInUserListWithName:name];
+    if(usr!=nil){//found user
+        //output format to receivePing method:user info
+        NSArray* userArray = [msgArray subarrayWithRange:NSMakeRange(2, 6)];//xpos, ypos, ID values...
+        [usr receivePing:userArray];
+    }
+    
+    NSString* syncServerPingName = [msgArray objectAtIndex:8];//todo add check
+    if( [_syncServerName isEqualToString:@"noSyncServer"] || [syncServerPingName isEqualToString:_syncServerName] ){
+        [self dealWithNewSyncServerName:syncServerPingName];//syncServerPingName
+    }
+}
 
 // group stuff - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -525,32 +556,6 @@
     }
     return usr;
     
-}
-
-- (void) receivePingAndMsgIDs:(NSArray*)msgArray{
-    //input format:
-    //  landini address (NSString)
-    //  name (NSString)
-    //  xpos (NSNumber)
-    //  ypos (NSNumber)
-    //  lastGDID (NSNumber)
-    //  theirMinGD (NSNumber)
-    //  lastOGDID (NSNumber)
-    //  lastPerformedOGDID (NSNumber)
-    //  syncServerPingName (NSString)
-    
-    if([msgArray count]!=8)return;
-    
-    NSString* name = (NSString*)[msgArray objectAtIndex:1];
-    //NSLog(@"receivePingAndMsg from %@", name);
-    LANdiniUser* usr = [self userInUserListWithName:name];
-    if(usr!=nil){//found user
-        //output format to receivePing method:user info
-        NSArray* userArray = [msgArray subarrayWithRange:NSMakeRange(2, 6)];//xpos, ypos, ID values...
-        [usr receivePing:userArray];
-    }
-    
-    [self dealWithNewSyncServerName:(NSString*)[msgArray objectAtIndex:8]];//syncServerPingName
 }
 
 -(void)startDropUserTimer{
@@ -614,12 +619,16 @@
         [namesArray sortUsingSelector:@selector(compare:)];//sort by string
         NSLog(@"here's allNames: %@", namesArray);
         if([namesArray objectAtIndex:0]==_me.name){
-            [self becomeSyncServer];
+            if(![_syncServerName isEqualToString:_me.name]){
+                [self becomeSyncServer];
+            }
+            else{
+                NSLog(@"i am already the sync server");
+            }
         }
     }
-    //DEI edit from supercollider original, rather than just "else", only run on change of server name
-    //otherwise, we are constantly running this on every receivePing
-    else if(![newName isEqualToString:_syncServerName]){
+    
+    else{
         LANdiniUser* user = nil;
         user = [self userInUserListWithName:newName];
         if(user!=nil){//if found
@@ -628,7 +637,9 @@
             if([self.logDelegate respondsToSelector:@selector(refreshSyncServer:)] )
                 [self.logDelegate refreshSyncServer:newName];
         }
-        [self startSyncTimer];
+        
+        //[self startSyncTimer];
+        [self performSelectorOnMainThread:@selector(startSyncTimer) withObject:nil waitUntilDone:NO];
     }
 }
 
@@ -641,6 +652,7 @@
         [self.logDelegate refreshSyncServer:_syncServerName];
 }
 
+//i get this when I am the time server
 -(void)receiveSyncRequest:(NSArray*)msgArray{
     //input format:
     // landini address
@@ -658,8 +670,8 @@
     LANdiniUser* usr = [self userInUserListWithName:theirName];
     
     if(usr!=nil){
-        
-        NSArray* msgArray = [NSArray arrayWithObjects:
+        if(![usr.name isEqualToString:_me.name]){
+            NSArray* msgArray = [NSArray arrayWithObjects:
                              @"/landini/sync/reply",
                              _me.name,
                              theirTimeNumber,
@@ -668,6 +680,16 @@
         
         OSCMessage* msg = [LANdiniLANManager OSCMessageFromArray:msgArray];
         [[usr addr] sendThisPacket:[OSCPacket createWithContent:msg]];
+        }
+        else{
+            NSLog(@"i should not be sending myself sync requests");
+            [self stopSyncTimer];
+        }
+    }
+    else{
+        NSLog(@"time server is not in the userlist");
+        [self stopSyncTimer];
+        [self resetSyncVars];
     }
 }
 
@@ -679,12 +701,8 @@
     NSTimeInterval timeServerTime = [[msgArray objectAtIndex:3] doubleValue];
 
     LANdiniUser* usr = [self userInUserListWithName:timeServerName];
-    /*for(LANdiniUser* currUser in _userList){
-        if([timeServerName isEqualToString:currUser.name]){
-            usr = currUser;
-            break;
-        }
-    }*/
+    
+    
     if(usr && [timeServerName isEqualToString:_syncServerName]){
         _inSync = YES;
         NSTimeInterval now = [self elapsedTime];
@@ -720,7 +738,7 @@
         OSCMessage *msg = [OSCMessage createWithAddress:@"/landini/sync/request"];
         [msg addString:_me.name];
         [msg addFloat:[self elapsedTime]];
-        [_broadcastAppAddr sendThisPacket:[OSCPacket createWithContent:msg]];
+        [[server addr] sendThisPacket:[OSCPacket createWithContent:msg]];
     }
 }
 
