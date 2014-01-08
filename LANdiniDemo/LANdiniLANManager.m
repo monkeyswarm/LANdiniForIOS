@@ -652,7 +652,7 @@
         [self.logDelegate refreshSyncServer:_syncServerName];
 }
 
-//i get this when I am the time server
+//i get this when I am the time server, I should not be getting messages from me
 -(void)receiveSyncRequest:(NSArray*)msgArray{
     //input format:
     // landini address
@@ -668,7 +668,6 @@
     NSNumber* theirTimeNumber = [msgArray objectAtIndex:2];
     
     LANdiniUser* usr = [self userInUserListWithName:theirName];
-    
     if(usr!=nil){
         if(![usr.name isEqualToString:_me.name]){
             NSArray* msgArray = [NSArray arrayWithObjects:
@@ -733,7 +732,7 @@
             break;
         }
     }*/
-    if(server){//should this be sent even if I am server?
+    if(server && server!=_me){//should this be sent even if I am server?
 
         OSCMessage *msg = [OSCMessage createWithAddress:@"/landini/sync/request"];
         [msg addString:_me.name];

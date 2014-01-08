@@ -7,8 +7,6 @@
 //
 
 #import "ViewController.h"
-//#import "LANdiniLANManager.h"
-//#import "VVOSC.h"
 
 #import <ifaddrs.h>
 #import <arpa/inet.h>
@@ -17,7 +15,7 @@
 
 @interface ViewController () {
     LANdiniLANManager* llm;
-    
+    AVAudioPlayer* _player;
     //my datamodel
     NSMutableArray* _userList;
 }
@@ -49,6 +47,14 @@
     int fromLocalPort = 50505;
     outPort = [manager createNewOutputToAddress:@"127.0.0.1" atPort:toLocalPort];
     inPort = [manager createNewInputForPort:fromLocalPort];
+    
+    
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"clap" withExtension:@"wav"];
+    
+	NSError *error;
+	_player = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
+    [_player prepareToPlay];
+    _player.delegate = self;
     
     //not called on startup
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(restartOSC:) name:UIApplicationWillEnterForegroundNotification object:nil];
@@ -105,7 +111,7 @@
 }
 
 - (void) sendMessage{//user button hit
-    NSArray* msgArray =@[[self protocolString], [self destString], @"/poopy", @2, [NSNumber numberWithInteger:3]];
+    NSArray* msgArray =@[[self protocolString], [self destString], @"/clap"];
     [self logMsgOutput:msgArray];
     OSCMessage* msg = [LANdiniLANManager OSCMessageFromArray:msgArray];
     //[llm sendMsg:@[@"/sendGD", @"all", @"/poopy", @2]];
@@ -229,8 +235,20 @@
         
             [_destTableView reloadData];
         });
+    } else if ([address isEqualToString:@"/clap"]){
+        if(_player.playing){
+            [_player pause];
+            [_player setCurrentTime:0];
+        }
+        [_player play];
     }
     
+}
+
+//player delegate
+
+- (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag {
+    [_player prepareToPlay];
 }
 
 

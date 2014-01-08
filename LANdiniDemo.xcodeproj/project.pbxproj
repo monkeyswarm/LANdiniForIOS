@@ -38,6 +38,7 @@
 		909999141860A6950085D121 /* OSCZeroConfManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 909998EA1860A6950085D121 /* OSCZeroConfManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		9099991C1860B7360085D121 /* LANdiniUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9099991B1860B7360085D121 /* LANdiniUser.m */; };
 		909999201860BA330085D121 /* LANdiniLANManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9099991F1860BA330085D121 /* LANdiniLANManager.m */; };
+		90DFFB21187DB2FE00DD2149 /* clap.wav in Resources */ = {isa = PBXBuildFile; fileRef = 90DFFB20187DB2FE00DD2149 /* clap.wav */; };
 		DC9162A11863C20D00A329FD /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = DC91629B1863C20D00A329FD /* LICENSE */; };
 		DC9162A21863C20D00A329FD /* README.markdown in Resources */ = {isa = PBXBuildFile; fileRef = DC91629C1863C20D00A329FD /* README.markdown */; };
 		DC9162A31863C20D00A329FD /* MAZeroingWeakRef.m in Sources */ = {isa = PBXBuildFile; fileRef = DC91629F1863C20D00A329FD /* MAZeroingWeakRef.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -108,6 +109,7 @@
 		9099991B1860B7360085D121 /* LANdiniUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LANdiniUser.m; sourceTree = "<group>"; };
 		9099991E1860BA330085D121 /* LANdiniLANManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LANdiniLANManager.h; sourceTree = "<group>"; };
 		9099991F1860BA330085D121 /* LANdiniLANManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LANdiniLANManager.m; sourceTree = "<group>"; };
+		90DFFB20187DB2FE00DD2149 /* clap.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = clap.wav; sourceTree = "<group>"; };
 		DC9162951863BF8900A329FD /* VVBasicsStatic-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "VVBasicsStatic-Prefix.pch"; sourceTree = "<group>"; };
 		DC9162961863BF8900A329FD /* VVBasicsStatic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVBasicsStatic.h; sourceTree = "<group>"; };
 		DC9162981863BF8900A329FD /* VVOSCStatic-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "VVOSCStatic-Prefix.pch"; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 		909998321860A4AA0085D121 /* LANdiniDemo */ = {
 			isa = PBXGroup;
 			children = (
+				90DFFB20187DB2FE00DD2149 /* clap.wav */,
 				9099983B1860A4AA0085D121 /* AppDelegate.h */,
 				9099983C1860A4AA0085D121 /* AppDelegate.m */,
 				9099983E1860A4AA0085D121 /* Main_iPhone.storyboard */,
@@ -370,6 +373,7 @@
 				909998431860A4AA0085D121 /* Main_iPad.storyboard in Resources */,
 				909998481860A4AA0085D121 /* Images.xcassets in Resources */,
 				DC9162A21863C20D00A329FD /* README.markdown in Resources */,
+				90DFFB21187DB2FE00DD2149 /* clap.wav in Resources */,
 				909998401860A4AA0085D121 /* Main_iPhone.storyboard in Resources */,
 				909998371860A4AA0085D121 /* InfoPlist.strings in Resources */,
 			);
