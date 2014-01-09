@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "VVOSC.h"
 #import "LANdiniLANManager.h"
+#import <AVFoundation/AVFoundation.h>
 
-@interface ViewController : UIViewController<LANdiniDemoLogDelegate, UITableViewDelegate, UITableViewDataSource>{
+@interface ViewController : UIViewController<LANdiniDemoLogDelegate, UITableViewDelegate, UITableViewDataSource, AVAudioPlayerDelegate>{
     OSCManager *manager;
     OSCInPort *inPort;
 	OSCOutPort *outPort;
